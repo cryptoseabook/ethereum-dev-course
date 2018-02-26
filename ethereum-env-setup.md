@@ -34,6 +34,15 @@ brew install node
 7) Install [Truffle 4](https://truffleframework.com)
 ```
 npm uninstall -g truffle
-npm install -g truffle
+npm install -g truffle@4.0.4
+truffle version
 ```
+[Fix npm permission](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+
+8) Install [Atom](https://atom.io/)
+Atom solidity support
+```
+apm install language-ethereum
+```
+
 
