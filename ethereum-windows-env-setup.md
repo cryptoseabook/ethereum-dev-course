@@ -6,6 +6,8 @@
 #### 2) Install ConeMu
 ConEmu-Maximus5 is a Windows console emulator with tabs, which presents multiple consoles and simple GUI applications as one customizable GUI window with various features.
 <br>
+Install this version **ConEmu Stable, Installer (32-bit, 64-bit) - 5.23 MB | version: 161206 | File Signatures**
+<br>
 [Installation Link](https://conemu.github.io/)
 
 #### 3) Install NodeJs and NPM
