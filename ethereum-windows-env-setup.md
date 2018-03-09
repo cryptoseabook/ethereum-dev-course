@@ -14,3 +14,26 @@ Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.j
 NPM is a package manager for Node.js packages, or modules if you like. www.npmjs.com hosts thousands of free packages to download and use. The NPM program is installed on your computer when you install Node.js. NPM is already ready to run on your computer!
 <br>
 [Installation Link](https://nodejs.org/en/)
+
+#### 4) Install Geth or Go Ethereum
+Official Go implementation of the Ethereum protocol
+<br>
+[Installation Link](https://geth.ethereum.org/downloads/)
+
+#### 5) Install Ganache on Windows 10 Only
+Quickly fire up a personal Ethereum blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates. 
+<br>
+[Ganache](http://truffleframework.com/ganache/)
+
+#### 6) Install Ganache on Windows 8
+Please refer to this [link]().
+
+#### 7) Install Atom
+A modern and Free text editor for development.
+<br>
+[Installation Link](https://atom.io/)
+```
+atom -v
+apm install language-ethereum
+```
+
