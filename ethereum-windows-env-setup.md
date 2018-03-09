@@ -32,6 +32,9 @@ Please refer to this [link]().
 A modern and Free text editor for development.
 <br>
 [Installation Link](https://atom.io/)
+
+![Choose Install](https://user-images.githubusercontent.com/35029364/37189998-4d362008-23ab-11e8-8faf-55dc67275fea.PNG)
+
 ```
 atom -v
 apm install language-ethereum
