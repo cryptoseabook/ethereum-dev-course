@@ -44,5 +44,3 @@ Atom solidity support
 ```
 apm install language-ethereum
 ```
-
-
