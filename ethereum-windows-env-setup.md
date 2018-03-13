@@ -42,3 +42,9 @@ atom -v
 apm install language-ethereum
 ```
 
+### install Truffle
+```
+npm uninstall -g truffle
+npm install -g truffle@4.0.4
+truffle version
+```
