@@ -11,7 +11,7 @@ Install this version **ConEmu Stable, Installer (32-bit, 64-bit) - 5.23 MB | ver
 [Installation Link](https://conemu.github.io/)
 
 #### 3) Install NodeJs and NPM
-Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. 
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 <br>
 NPM is a package manager for Node.js packages, or modules if you like. www.npmjs.com hosts thousands of free packages to download and use. The NPM program is installed on your computer when you install Node.js. NPM is already ready to run on your computer!
 <br>
@@ -23,7 +23,7 @@ Official Go implementation of the Ethereum protocol
 [Installation Link](https://geth.ethereum.org/downloads/)
 
 #### 5) Install Ganache on Windows 10 Only
-Quickly fire up a personal Ethereum blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates. 
+Quickly fire up a personal Ethereum blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates.
 <br>
 [Ganache](http://truffleframework.com/ganache/)
 
@@ -40,6 +40,7 @@ A modern and Free text editor for development.
 ```
 atom -v
 apm install language-ethereum
+apm install file-icons
 ```
 
 ### install Truffle
