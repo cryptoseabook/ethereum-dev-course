@@ -7,10 +7,10 @@ var account2 = web3.eth.accounts[1]
 var balance = (acct) => {return web3.fromWei(web3.eth.getBalance(acct),'ether').toNumber() }
 
 //send eth
-web3.eth.sendTransaction({from:account1, to:account2, value:web3.toWei(1,'ether'),gasLimit:2100,gasPrice:20000000000})
+var txHash = web3.eth.sendTransaction({from:account1, to:account2, value:web3.toWei(1,'ether'),gasLimit:2100,gasPrice:20000000000})
 
 //make var with hash
-var txHash = _
+//var txHash = _
 
 //get transaction
 web3.eth.getTransaction(txHash)
@@ -41,9 +41,9 @@ var sTx = tx.serialize().toString('hex')
 //send raw transaction
 web3.eth.sendRawTransaction(
 '0x'+tx.serialize().toString('hex'), (error,data) => {
-if(!error) { 
+if(!error) {
 console.log(data) }
 })
 
-//check it worked 
+//check it worked
 web3.eth.getTransaction(id)
