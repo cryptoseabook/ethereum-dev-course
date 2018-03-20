@@ -4,7 +4,6 @@ var Web3 = require("web3")
 var web3 = new Web3();
 
 var hexToBytes = function(hex) {
-
   if (hex.length != 64) {
     throw ("private key needs to be 64 characters long!!!");
   }
@@ -40,4 +39,4 @@ var privateToAddressSha3 = function(seed) {
   return `0x${EthUtil.privateToAddress(pk).toString('hex')}`
 }
 
-console.log(privateKeyToAddress(process.argv[2]))
+console.log(privateToAddressSha3(process.argv[2]))
