@@ -6,7 +6,7 @@ contract Escrow {
   address public seller;
   address public judger;
 
-  function Escrow(address _seller, address _judger) public {
+  function Escrow(address _seller, address _judger) payable public {
     buyer = msg.sender;
     seller = _seller;
     judger = _judger;
