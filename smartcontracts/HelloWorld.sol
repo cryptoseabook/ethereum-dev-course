@@ -1,13 +1,13 @@
-pragma solidity  ^0.4.18;
+pragma solidity ^0.4.18;
 
 contract HelloWorld {
 
-    string message;
-    
+    string public message;
+
     function HelloWorld() public  {
         message = "Hello World";
     }
-    
+
     function displayMessage() view public returns (string) {
       return  message;
     }
@@ -15,5 +15,5 @@ contract HelloWorld {
     function setMessage(string aMessage) public {
         message = aMessage;
     }
-    
+
   }

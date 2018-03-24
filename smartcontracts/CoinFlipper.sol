@@ -10,7 +10,7 @@ contract CoinFlipper {
   address public lastWinner;
   uint public seedBlockNumber;
 
-  modifier onlyState(GameState expectedState) { if(expectedState == currentState) { _; } else { revert(); } }
+  modifier onlyState(GameState expectedState) { require(expectedState == currentState); _; }
 
   function CoinFlipper() public {
     currentState = GameState.noWager;
@@ -24,14 +24,11 @@ contract CoinFlipper {
   }
 
   function acceptWager() onlyState(GameState.wagerMade) payable public returns (bool) {
-    if(msg.value == wager) {
-      player2 = msg.sender;
-      seedBlockNumber = block.number;
-      currentState = GameState.wagerAccepted;
-      return true;
-    } else {
-      revert();
-    }
+    require(msg.value == wager);
+    player2 = msg.sender;
+    seedBlockNumber = block.number;
+    currentState = GameState.wagerAccepted;
+    return true;
   }
 
   function resolveBet() onlyState(GameState.wagerAccepted) public returns (bool) {

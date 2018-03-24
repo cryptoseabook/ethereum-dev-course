@@ -4,23 +4,23 @@ contract Escrow {
 
   address public buyer;
   address public seller;
-  address public judger;
+  address public judge;
 
-  function Escrow(address _seller, address _judger) payable public {
+  function Escrow(address _seller, address _judge) payable public {
     buyer = msg.sender;
     seller = _seller;
-    judger = _judger;
+    judge = _judge;
   }
 
   function payoutToSeller() public {
-    if (msg.sender == buyer || msg.sender == judger) {
+    if (msg.sender == buyer || msg.sender == judge) {
         address currentContractAddr = this;
         seller.transfer(currentContractAddr.balance); // in old solidity code, you will see xxx.send(ether), this is not safe.
     }
   }
 
   function refundToBuyer() public {
-    if (msg.sender == buyer || msg.sender == judger) {
+    if (msg.sender == seller || msg.sender == judge) {
       address currentContractAddr = this;
       buyer.transfer(currentContractAddr.balance);
     }
