@@ -4,12 +4,12 @@ contract Escrow {
 
   address public buyer;
   address public seller;
-  address public judger;
+  address public judge;
 
-  function Escrow(address _seller, address _judger) public {
+  function Escrow(address _seller, address _judge) payable public {
     buyer = msg.sender;
     seller = _seller;
-    judger = _judger;
+    judge = _judge;
   }
 
   function payoutToSeller() public {

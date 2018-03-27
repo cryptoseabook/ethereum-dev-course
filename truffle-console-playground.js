@@ -18,22 +18,22 @@ openRoomEvent.watch(function(error, event) {console.log(error, event);});
 
 
 var endPoint = "https://kovan.infura.io/H0MnmEaaittMM4B3XX2S"
-var acc1 = "0x8aE18ed773c403aB1565B2C2e06D06093A1FCBAb"
-var acc2 = "0xb4EB33302fE94155730922b2A84E38c134426308"
+var acc1 = "0xb4EB33302fE94155730922b2A84E38c134426308"
+var acc2 = "0x8aE18ed773c403aB1565B2C2e06D06093A1FCBAb"
 
 var Web3 = require("web3")
 var web3 = new Web3(new Web3.providers.HttpProvider(endPoint))
 
 var EthTx = require("ethereumjs-tx")
-var pk1 = "3d446b534cc5c4b453dcef86a88d750ad730819e809bfed738c33fa01d275919"
+var pk1 = "014786d91ad6c417705ee5dba4fa8e7acf6d8098c74b78d8cf6e272b8c556d0e"
 var pk1x = new Buffer(pk1, 'hex')
 
 var rawTx = {
 	nonce: web3.toHex(web3.eth.getTransactionCount(acc1)),
 	to: acc2,
-	gasPrice: web3.toHex(20000000000),
-	gasLimit: web3.toHex(21000),
-	value: web3.toHex(web3.toWei(1, 'ether')),
+	gasPrice: web3.toHex(2000000000),
+	gasLimit: web3.toHex(51000),
+	value: web3.toHex(web3.toWei(0.5, 'ether')),
 	data: ""
 }
 
@@ -51,3 +51,36 @@ web3.eth.sendRawTransaction(
 if(!error) {
 console.log(data) }
 })
+
+truffle migrate --compile-all --reset --network ganache
+truffle console --network ganache
+
+CoinFlipper.deployed().then(function(instance) {coinFlipper = instance});
+
+var player1 = web3.eth.accounts[0]
+var player2 = web3.eth.accounts[1]
+
+coinFlipper.makeWager({from: player1, value: web3.toWei(1, "ether")})
+coinFlipper.acceptWager({from: player2, value: web3.toWei(1, "ether")})
+coinFlipper.resolveBet({from: player1})
+
+var contributionEvent = crowdFund.Contribution({fromBlock: 0, toBlock: 'latest'});
+contributionEvent.watch(function(error, result) {
+  console.log(result.args._from, result.args._value);
+});
+
+const accountSid = 'AC98ac7c375710f16dbd65ed42111b9eac';
+const authToken = '629c40c381d2dc99f8c0d88af9885c14';
+
+// require the Twilio module and create a REST client
+const client = require('twilio')(accountSid, authToken);
+
+client.messages
+  .create({
+    to: '+610421489173',
+    from: '+61437880733',
+    body: '',
+  })
+  .then(message => console.log(message.sid));
+
+contributionEvent.watch(function(error, result) { client.messages.create({to: "+61421489173", from: "+61437880733", body: `New Contribution from: ${result.args._from},  ${web3.fromWei(result.args._value, "ether")} ether`}).then(message => console.log(message.sid))});
