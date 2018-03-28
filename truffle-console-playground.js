@@ -75,12 +75,6 @@ const authToken = '629c40c381d2dc99f8c0d88af9885c14';
 // require the Twilio module and create a REST client
 const client = require('twilio')(accountSid, authToken);
 
-client.messages
-  .create({
-    to: '+610421489173',
-    from: '+61437880733',
-    body: '',
-  })
-  .then(message => console.log(message.sid));
+client.messages.create({to: '+610421489173', from: '+61437880733',body: 'helloworld',}).then(message => console.log(message.sid));
 
-contributionEvent.watch(function(error, result) { client.messages.create({to: "+61421489173", from: "+61437880733", body: `New Contribution from: ${result.args._from},  ${web3.fromWei(result.args._value, "ether")} ether`}).then(message => console.log(message.sid))});
+contributionEvent.watch(function(error, result) { client.messages.create({to: "+610421489173", from: "+61437880733", body: `New Contribution from: ${result.args._from}, ${web3.fromWei(result.args._value, "ether")} ether`}).then(message => console.log(message.sid))});

@@ -4,7 +4,7 @@ contract CoinFlipper {
 
   enum GameState {noWager, wagerMade, wagerAccepted}
   GameState public currentState;
-  uint public wager;
+  uint256 public wager;
   address public player1;
   address public player2;
   address public lastWinner;

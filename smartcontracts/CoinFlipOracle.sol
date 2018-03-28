@@ -15,3 +15,5 @@ contract CoinFlipOracle is usingOraclize {
     result = _result;
   }
 }
+
+// it only works on ropsten network at the moment

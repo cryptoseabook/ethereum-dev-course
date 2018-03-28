@@ -38,7 +38,7 @@ contract CrowdFund is Owned {
     function payout() onlyOwner public {
         address contractAddr = this;
         if (contractAddr.balance >= goal) {
-            beneficiary.transfer(contractAddr.balance);
+          beneficiary.transfer(contractAddr.balance);
         }
     }
 

@@ -16,14 +16,14 @@ var txHash = web3.eth.sendTransaction({from:account1, to:account2, value:web3.to
 web3.eth.getTransaction(txHash)
 
 //create private key var -- edit me
-var pk1 = '0dbbe8e4ae425a6d2687f1a7e3ba17bc98c673636790f1b8ad91193c05875ef1'
+var pk1 = 'c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3'
 var EthTx = require("ethereumjs-tx")
 var pk1x = new Buffer(pk1, 'hex')
 
 //setup transaction data
 var rawTx = {
-  nonce: web3.toHex(web3.eth.getTransactionCount(account1)),
-  to: account2,
+  nonce: web3.toHex(web3.eth.getTransactionCount(account2)),
+  to: account1,
   gasPrice: web3.toHex(20000000000),
   gasLimit: web3.toHex(21000),
   value: web3.toHex(web3.toWei(25, 'ether')),

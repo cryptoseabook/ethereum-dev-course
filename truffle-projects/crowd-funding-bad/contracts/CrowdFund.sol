@@ -1,7 +1,5 @@
 pragma solidity ^0.4.18;
 
-import "./Owned.sol";
-
 contract CrowdFund {
 
     address public beneficiary;
@@ -26,14 +24,14 @@ contract CrowdFund {
         funders.push(Funder(msg.sender, msg.value));
     }
 
-    function payout() onlyOwner public {
+    function payout() public {
         address contractAddr = this;
         if (contractAddr.balance >= goal && now > deadline) {
             beneficiary.transfer(contractAddr.balance);
         }
     }
 
-    function refund() onlyOwner public {
+    function refund() public {
         uint256 index;
         for(index = 0; index < funders.length; index++) {
             funders[index].contributor.transfer(funders[index].amount);

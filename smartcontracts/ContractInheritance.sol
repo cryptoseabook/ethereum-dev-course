@@ -1,8 +1,8 @@
-contract owned {
+contract Owned {
 
   address public owner;
 
-  function owned() {
+  function Owned() {
     owner = msg.sender;
   }
 
@@ -14,7 +14,7 @@ contract owned {
 
 }
 
-contract helloworld is owned {
+contract Helloworld is Owned {
 
   string public message;
 
@@ -24,18 +24,17 @@ contract helloworld is owned {
 
 }
 
-contract mortal {
+contract Mortal {
 
   address public owner;
 
-  function mortal() {
+  function Mortal() {
     owner = msg.sender;
   }
 
   modifier onlyOwner() {
-    if(msg.sender == owner) {
-      _;
-    }
+    require(msg.sender == owner);
+    _;
   }
 
   function kill() onlyOwner() {
@@ -44,11 +43,11 @@ contract mortal {
 
 }
 
-contract helloworld is mortal {
+contract HelloWorld is Mortal {
 
   string public message;
 
-  function setMessage(string _message) onlyOwner() {
+  function setMessage(string _message) payable onlyOwner() {
     message = _message;
   }
 

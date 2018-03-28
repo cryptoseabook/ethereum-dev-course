@@ -13,7 +13,7 @@ contract Escrow {
   }
 
   function payoutToSeller() public {
-    if (msg.sender == buyer || msg.sender == judger) {
+    if (msg.sender == buyer || msg.sender == judge) {
         address currentContractAddr = this;
         seller.transfer(currentContractAddr.balance); // in old solidity code, you will see xxx.send(ether), this is not safe.
     }

@@ -1,8 +1,10 @@
 pragma solidity ^0.4.18;
 
+import "./Owned.sol";
+
 contract HelloWorld {
 
-    string public message;
+    string message;
 
     function HelloWorld() public  {
         message = "Hello World";

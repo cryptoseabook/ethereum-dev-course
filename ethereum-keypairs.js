@@ -35,7 +35,7 @@ var privateKeyToAddress = function(privateKey) {
 }
 
 var privateToAddressSha3 = function(seed) {
-  var pk = web3.sha3(web3.sha3(seed))
+  var pk = web3.sha3(web3.sha3(web3.sha3(seed)))
   return `0x${EthUtil.privateToAddress(pk).toString('hex')}`
 }
 
