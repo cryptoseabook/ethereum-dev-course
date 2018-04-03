@@ -5,4 +5,8 @@ contract Fallback {
   function() payable {
 
   }
+
+  function test() public view {
+    return "this is a test";
+  }
 }
