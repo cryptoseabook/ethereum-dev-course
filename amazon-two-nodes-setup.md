@@ -50,7 +50,7 @@ Copy and paste the following json file and name it as genesis.json to `~/eth-blo
 
 ```
 cd ~/eth-blockchain/private
-geth --datadir=~/eth-blockchain/private init ~/.puppeth/genesis.json
+geth --datadir=~/eth-blockchain/private init ~/eth-blockchain/private/genesis.json
 ```
 
 ### Create an account
